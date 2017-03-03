@@ -6,8 +6,10 @@ ospray_create_library(ospray_module_vive
 	ospray/vr_camera.cpp
 	ospray/vr_camera.ispc
 	ospray/vive_module.cpp
+    sg/VRPerspectiveCamera.cpp
 	LINK
-	ospray)
+	ospray
+	ospray_sg)
 
 ospray_create_application(ospray-vive
 	main.cpp
@@ -15,6 +17,7 @@ ospray_create_application(ospray-vive
 	gl_core_3_3.c
 	LINK
 	ospray
+	ospray_sg
 	${SDL2_LIBRARY}
 	${OPENGL_LIBRARIES}
 	${OPENVR_LIBRARY})
